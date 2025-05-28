@@ -7,6 +7,10 @@ const cors = require('cors')
 
 const app = express()
 
+// const swaggerUi = require('swagger-ui-express')
+// const swaggerSpec = require('./src/docs/swagger')
+
+// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'jade')
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
