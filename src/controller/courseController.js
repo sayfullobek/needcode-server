@@ -73,7 +73,7 @@ exports.getAll = async (req, res) => {
 			.sort({ createdAt: -1 })
 			.skip(skip)
 			.limit(limit)
-			.populate('teacher')
+			.populate('teacher learns')
 
 		const host = `${req.protocol}://${req.get('host')}`
 		const data = courses.map(course => ({

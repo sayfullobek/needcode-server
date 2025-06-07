@@ -9,5 +9,7 @@ router.use('/employee', require('./userRoute'))
 router.use('/course', require('./courseRoute'))
 router.use('/module', require('./moduleRoute'))
 router.use('/lesson', require('./lessonRoute'))
+router.use('/saveCourse', require('./saveCourseRoute'))
+router.use('/comment', require('./comentRoute'))
 
 module.exports = router

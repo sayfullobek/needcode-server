@@ -24,7 +24,6 @@ exports.createCEO = async () => {
 		await newCeo.save()
 		console.log('CEO yaratildi')
 	} catch (err) {
-		console.log(err)
 		return false
 	}
 }

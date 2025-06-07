@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 const app = require('../app')
-const https = require('https')
+// const https = require('https')
+const http = require('http')
 const fs = require('fs')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
@@ -12,17 +13,22 @@ const port = normalizePort(process.env.PORT || '1010') // 443 emas!
 app.set('port', port)
 
 // Sertifikatlar yo'li
-const options = {
-	key: fs.readFileSync('/etc/letsencrypt/live/api.kitob-faxr.uz/privkey.pem'),
-	cert: fs.readFileSync(
-		'/etc/letsencrypt/live/api.kitob-faxr.uz/fullchain.pem'
-	),
-}
+// const options = {
+// 	key: fs.readFileSync('/etc/letsencrypt/live/api.kitob-faxr.uz/privkey.pem'),
+// 	cert: fs.readFileSync(
+// 		'/etc/letsencrypt/live/api.kitob-faxr.uz/fullchain.pem'
+// 	),
+// }
 
 mongoose
 	.connect(process.env.MONGO_URI)
 	.then(() => {
-		https.createServer(options, app).listen(port, () => {
+		// https.createServer(options, app).listen(port, () => {
+		// 	console.log(`✅ HTTPS server running on port ${port}`)
+		// 	dataLoader.createCEO()
+		// 	console.log('MongoDB connected')
+		// })
+		http.createServer(app).listen(port, () => {
 			console.log(`✅ HTTPS server running on port ${port}`)
 			dataLoader.createCEO()
 			console.log('MongoDB connected')

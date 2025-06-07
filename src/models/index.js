@@ -8,4 +8,5 @@ module.exports = {
 	Learn: require('./learn'),
 	Course: require('./course'),
 	Coment: require('./coment'),
+	SaveCourse: require('./saveCourse'),
 }

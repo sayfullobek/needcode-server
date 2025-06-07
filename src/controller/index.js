@@ -7,4 +7,6 @@ module.exports = {
 	courseController: require('./courseController'),
 	moduleController: require('./moduleController'),
 	lessonController: require('./lessonController'),
+	comentController: require('./comentController'),
+	saveCourseController: require('./saveCourseController'),
 }
